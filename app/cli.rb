@@ -38,6 +38,7 @@ class CLI
         puts "what information do you like to know?"
         puts "1. Users count"
         puts "2. Search User by name"
+        puts "3. Insert to DB"
         input = gets.strip
         
         if input == "1"
@@ -46,6 +47,12 @@ class CLI
             puts "Type a name"
             value = gets.strip
             puts User.find_by(name: value)
+        elsif input == "3"
+            programs = GetPrograms.new.program_school
+            programs.each do |program|
+                User.create({name: program})
+                # puts "The current array item is: #{program}"
+            end
         end
     end
 end

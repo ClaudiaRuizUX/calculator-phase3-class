@@ -9,3 +9,4 @@ ActiveRecord::Base.establish_connection(
 require_relative "../app/calculator"
 require_relative "../app/model/user"
 require_relative "../app/cli"
+require_relative "../app/nyc_api"
